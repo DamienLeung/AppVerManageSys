@@ -19,7 +19,7 @@ public class AppVersionController {
 
     @RequestMapping("index")
     public ModelAndView index() {
-        return new ModelAndView("/index");
+        return new ModelAndView("/app/index");
     }
 
     @RequestMapping("list")

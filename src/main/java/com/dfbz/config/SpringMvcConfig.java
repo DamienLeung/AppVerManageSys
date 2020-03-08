@@ -28,7 +28,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
     @Bean
     public InternalResourceViewResolver getViewResolver(){
-        return new InternalResourceViewResolver("/WEB-INF/html/app",".html");
+        return new InternalResourceViewResolver("/WEB-INF/html",".html");
     }
 
 }
