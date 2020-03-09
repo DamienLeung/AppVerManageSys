@@ -50,7 +50,6 @@ public class SpringMybatis {
         return sqlSessionFactoryBean;
     }
 
-    //事务管理器配置
     @Bean
     public DataSourceTransactionManager getDataSourceTransactionManager(DruidDataSource druidDataSource) {
         return new DataSourceTransactionManager(druidDataSource);
