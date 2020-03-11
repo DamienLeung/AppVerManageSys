@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/manage/work")
+@RequestMapping("/manage/work/")
 public class WorkOrderController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class WorkOrderController {
 
     @RequestMapping("index")
     public ModelAndView index() {
-        return new ModelAndView("work/admin/index");
+        return new ModelAndView("/work/admin/work");
     }
 
     @RequestMapping("listPage/{pageNum}/{pageSize}")
@@ -31,11 +31,12 @@ public class WorkOrderController {
 
     @RequestMapping("toWorkDetail")
     public ModelAndView toWorkDetail() {
+        System.out.println(1);
         return new ModelAndView("/work/work-detail");
     }
 
-    @RequestMapping("/workDetail/{code}")
-    public ResultMsg workDetail(@PathVariable("code") String code) {
+    @RequestMapping("getDetail/{code}")
+    public ResultMsg getDetail(@PathVariable("code") String code) {
         return new ResultMsg(true, "成功", service.selectByCode(code));
     }
 }
